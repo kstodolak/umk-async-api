@@ -15,11 +15,13 @@ app.get('/', (req, res) => {
 
 
 app.post('/newsletter', (req, res) => {
-  if (Math.random() < 0.5) {
-    res.status(200).send('OK');
-  } else {
-    res.status(500).send('Internal Server Error');
-  }
+  setTimeout(() => {
+    if (Math.random() < 0.5) {
+      res.status(200).send('OK');
+    } else {
+      res.status(500).send('Internal Server Error');
+    }
+  }, 1000);
 });
 
 app.get('/questions', (req, res) => {
